@@ -1,1 +1,0 @@
-# Checkpoint-Secure-Solution-Implementation
