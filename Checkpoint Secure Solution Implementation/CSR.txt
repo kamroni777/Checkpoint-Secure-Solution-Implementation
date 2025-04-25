@@ -1,0 +1,10 @@
+# 8. Verify CSR
+openssl req -text -in corp.gomycode.com.csr -noout -verify
+
+# 9. Generate self-signed certificate (valid 365 days)
+openssl req -newkey rsa:2048 -nodes -keyout corp.gomycode.com.key -x509 -days 365 -out corp.gomycode.com.crt
+# Fill the same form again
+
+# 10. Convert to PFX/PKCS#12 format
+openssl pkcs12 -export -name "corp.gomycode.com" -out corp.gomycode.com.pfx -inkey corp.gomycode.com.key -in corp.gomycode.com.crt
+# You'll be prompted to set an export password
